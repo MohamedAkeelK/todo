@@ -24,14 +24,20 @@ class toDoList extends Component {
     event.preventDefault();
     // console.log("additem Method fired")
     const newItem = this.state.currentToDo;
-    // console.log(newItem);
-    this.state.todos.push(newItem)
+ 
     console.log(this.state)
+    if(newItem.currentToDo !== "") {
+      this.state.todos.push(newItem)
+      this.setState({ 
+        currentToDo: this.state.currentToDo = ""
+      })
+    }
   };
 
   render() {
     return (
       <div className="container">
+        
         <form onSubmit={this.addItem}>
           <label htmlFor="taskName">Task Name:</label>
           <input onChange={this.handleChange} name="taskName" type="text" placeholder="Add todo here!"/>
