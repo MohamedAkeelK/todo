@@ -20,7 +20,7 @@ code {
 label {
   font-weight: bolder;
   font-size: large;
-  text-decoration: underline;
+  
   color: azure;
   padding: 10px;
   margin-right: 10px;
@@ -36,4 +36,9 @@ button {
 li {
   font-weight: bold;
   color: azure;
+}
+
+h2 {
+  color: coral;
+  text-decoration: underline;
 }
