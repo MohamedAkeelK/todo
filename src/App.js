@@ -11,12 +11,13 @@ class toDoList extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.addItem = this.addItem.bind(this);
+    // this.deleteItems = this.deleteItems.bind(this);
   }
 
   handleChange = event => {
     // console.log(event.target.value)
     this.setState({ 
-      currentToDo: event.target.value,
+      currentToDo: event.target.value
     })
   };
 
@@ -34,6 +35,16 @@ class toDoList extends Component {
     }
   };
 
+  // deleteItems = (key) => {
+  //   const filteredItems = this.state.todos.filter(taskName =>
+  //     taskName.key !== key);
+  //     // this.state.todos = filteredItems
+  //     // console.log(this.state.key)
+  //     this.setState ({
+  //       todos: filteredItems
+  //     })
+  // }
+
   render() {
     return (
       <div className="container">
@@ -44,8 +55,25 @@ class toDoList extends Component {
           <button type="submit">Add Task</button>
         </form>
 
+      {/*my list*/}
         <ul>
-         {this.state.todos.map(taskName => <li key={taskName}>{taskName}</li>)}
+         {
+           //map taskName to list item
+         this.state.todos.map(taskName => <li key={taskName}>{taskName} 
+          {/*create a button for each list item*/}
+         <button type= "button" onClick={(key) => {
+           //filter , return items that are not equal to the task name 
+           let filteredItems = this.state.todos.filter(key =>
+           taskName !== key);
+            // set the state to the filtered items
+        this.setState ({
+        todos: filteredItems
+        })
+        console.log(this.state.todos)
+        }}>
+          delete
+         </button></li> )
+         }
         </ul>
 
       </div>

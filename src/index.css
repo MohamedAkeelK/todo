@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  background-color: darkslategrey;
+  padding: 30px;
+}
+
+label {
+  font-weight: bolder;
+  font-size: large;
+  text-decoration: underline;
+  color: azure;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px;
+  margin-left: 15px;
+}
+
+
+
+li {
+  font-weight: bold;
+  color: azure;
+}
